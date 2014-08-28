@@ -6,7 +6,7 @@ SAPI_Testing_Tool
 * The old SAPI (Javascript) is based on YQL, and the new SAPI (Java) is base on YQLP.
 * The testing tool is almost like a simulator, which simulates the users’ requests using curl command.
 * Whole flowchart  
-<img src="https://git.corp.yahoo.com/herizhao/SAPI_Testing_Tool/raw/master/ReadmePicture/flowchart.png" alt="Drawing" width=500px/>
+<img src="https://raw.githubusercontent.com/zhaoheri/SAPI_Testing_Tool/raw/master/ReadmePicture/flowchart.png" alt="Drawing" width=500px/>
   1. Firstly, convert access log to YQL format and YQLP format respectively. The results are same content in different formats: Curl command in YQL format and in YQLP format.
   2. Run two formats curl commands respectively, then get two responses in Json format.
   3. Java program is used to compare every field between two responses, and then outputs the differences, their number, and one of difference example for debug.
@@ -49,7 +49,7 @@ SAPI_Testing_Tool
 	  $./mod_log --outputFileName 0826_yql.res --hostname video.media.yql.yahoo.com < [LogFileName]
   2. run,sh:
     * Automatically change format and run curl commands and output the responses and curl command files. It helps you do all the things below:  
-    	<img src="https://git.corp.yahoo.com/herizhao/SAPI_Testing_Tool/raw/master/ReadmePicture/whatRunDoes.png" alt="Drawing" width=300px> 
+    	<img src="https://raw.githubusercontent.com/zhaoheri/SAPI_Testing_Tool/raw/master/ReadmePicture/whatRunDoes.png" alt="Drawing" width=300px> 
     * Architecture:  
       Access Log -> log1/log2….. -> change format -> 1curl.sh/2curl.sh…. -> run in the same time -> 1.res/2.res…. -> all.res
     * @param:  
@@ -67,10 +67,10 @@ SAPI_Testing_Tool
 	* To Run:  
 	  $./run.sh [yql/yqlp] [Resource Log File name] [Destination Result File name] [Logs number per file] (option)[HostName]  
 	  Should see :  
-	  <img src="https://git.corp.yahoo.com/herizhao/SAPI_Testing_Tool/raw/master/ReadmePicture/whatsOnTerminalWhenRun.png" alt="Drawing" width=600px/>
+	  <img src="https://raw.githubusercontent.com/zhaoheri/SAPI_Testing_Tool/raw/master/ReadmePicture/whatsOnTerminalWhenRun.png" alt="Drawing" width=600px/>
 	  The number of “appending output the nohup.out” corresponding to the number of sub files.    
 	  The curl information will be recorded in the file nohup.out:    
-	  <img src="https://git.corp.yahoo.com/herizhao/SAPI_Testing_Tool/raw/master/ReadmePicture/nohup.png" alt="Drawing" width=600px/>
+	  <img src="https://raw.githubusercontent.com/zhaoheri/SAPI_Testing_Tool/raw/master/ReadmePicture/nohup.png" alt="Drawing" width=600px/>
 	* Output file:
    
 		>$./run.sh  yqlp  0827.log  0827_yqlp  3  video.media.yql.yahoo.com    
@@ -98,19 +98,19 @@ SAPI_Testing_Tool
 		2. Modify some fields in YQL:  
 		    yvap -> empty, because yvap is for ads and it might different  
 		3. Compare YQL and YQLP:  
-			<img src="https://git.corp.yahoo.com/herizhao/SAPI_Testing_Tool/raw/master/ReadmePicture/json_compFlowChart.png" alt="Drawing" width=900px/>  
+			<img src="https://raw.githubusercontent.com/zhaoheri/SAPI_Testing_Tool/raw/master/ReadmePicture/json_compFlowChart.png" alt="Drawing" width=900px/>  
 		4. Print out the difference result:  
 		   First print out the titles, and then print the difference list.
 
 
 ####How to see the compare result:
 Import the .txt file you got from java program into Excel.  
-<img src="https://git.corp.yahoo.com/herizhao/SAPI_Testing_Tool/raw/master/ReadmePicture/compareResult1.png" alt="Drawing" width=1000px/>  
+<img src="https://raw.githubusercontent.com/zhaoheri/SAPI_Testing_Tool/raw/master/ReadmePicture/compareResult1.png" alt="Drawing" width=1000px/>  
 This is comparision for every field in streams. You can see the yql result and yqlp result in cells if they are different.  
 The lineNumForStream refers to the line number in curl command .sh file, where you can find the curl command corresponding to this ID and this problem. (eg. in the chart above, if you go for line 23608 in the 8027_yql.sh and 0827_yqlp.sh, and run both curl again, you will find the host and path are different.)  
-<img src="https://git.corp.yahoo.com/herizhao/SAPI_Testing_Tool/raw/master/ReadmePicture/compareResult2.png" alt="Drawing" width=1000px/>  
+<img src="https://raw.githubusercontent.com/zhaoheri/SAPI_Testing_Tool/raw/master/ReadmePicture/compareResult2.png" alt="Drawing" width=1000px/>  
 This is comparision for every field in meta. The representation method is the same with streams. In this example, lineNum:0 means there is no difference in the meta, so this ID must be picked up by other reasons.  
-<img src="https://git.corp.yahoo.com/herizhao/SAPI_Testing_Tool/raw/master/ReadmePicture/compareResult3.png" alt="Drawing" width=1000px/>  
+<img src="https://raw.githubusercontent.com/zhaoheri/SAPI_Testing_Tool/raw/master/ReadmePicture/compareResult3.png" alt="Drawing" width=1000px/>  
 This is the last part of the table. streamsDiffNum, metaDiffNum, metricsDiffNum, licenseDiffNum, and closedcaptionDiffNum represent how many differences caused by this ID. (eg. In the chart above, this ID caused 604 streams differences, and 0 for the others.)  
 
 
