@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: tsaloranta
+Build-Jdk: 1.7.0_10-ea
+Specification-Title: jackson-databind
+Specification-Version: 2.2.2
+Specification-Vendor: FasterXML
+Implementation-Title: jackson-databind
+Implementation-Version: 2.2.2
+Implementation-Vendor-Id: com.fasterxml.jackson.core
+Implementation-Vendor: FasterXML
+Implementation-Build-Date: 2013-05-26 22:24:50-0700
+X-Compile-Source-JDK: 1.6
+X-Compile-Target-JDK: 1.6
+

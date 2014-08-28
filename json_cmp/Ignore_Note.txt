@@ -1,0 +1,46 @@
+1. Meta -> credits -> label
+YQL: label
+YQLP: no
+How to do: ignore both labels
+
+2. streams -> path -> plrs & devtype
+YQL: plrs
+YQLP: devtype
+How to do: igonor plrs and devtype
+
+3. streams -> path -> site
+YQL: no site sometime
+YQLP: always has site (even when site="")
+How to do: nothing
+
+4. streams -> path -> region
+YQL: no region sometime
+YQLP: always has region (even when region="")
+How to do: nothing
+
+5. Metrics -> plidl & isrc
+YQL: no sometime
+YALP: yes
+How to do: ignore all
+
+6. Metrics -> pspid
+YQL: no
+curl -G "http://perf-engine2.tachyon.yql.gq1.yahoo.com:4080/v1/video/sapi/streams/cfb73b2f-8af5-35c4-a64c-bd3e00db9cc7?plrs=0&format=m3u8&protocol=https,http&region=US&lang=en-US" -H "YahooRemoteIP: 10.222.0.193" -H "Host:video.media.yql.yahoo.com"
+YQLP: yes
+curl -G "engine12.yql.gq1.yahoo.com:4080/v1/public/yql?q=SELECT%20*%20FROM%20yahoo.media.video.streams%20WHERE%20id%20in%20(%22cfb73b2f-8af5-35c4-a64c-bd3e00db9cc7%22)%20AND%20plrs=%220%22%20AND%20format=%22m3u8%22%20AND%20protocol=%22https,http%22%20AND%20region=%22US%22%20AND%20lang=%22en-US%22&format=json&env=prod&src=japi" -H "YahooRemoteIP: 10.222.0.193" -H "Host:video.query.yahoo.com"
+How to do: ingore all
+
+7. Streams -> h264_profile
+YQL:
+YQLP:
+How to do: ignore all
+
+8. Metrics -> beacons
+For now 57 differences in Metrics (2000 logs)
+all are beacons
+How to do: ignore all beacons now
+
+9. line:10105 YQL
+not a json format
+
+10. 
